@@ -12,7 +12,8 @@ const createCustomElement = (element, className, innerText) => {
   return e;
 };
 
-const createProductItemElement = ({ sku, name, image }) => {
+const createProductItemElement = ({ id: sku, title: name, thumbnail: image }) => {
+  fetchProducts();
   const section = document.createElement('section');
   section.className = 'item';
 
@@ -38,4 +39,15 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   return li;
 };
 
-window.onload = () => { };
+const product = document.querySelector('.items');
+
+const products = () => {
+  fetchProducts('computador')
+  .then((item) => item.results
+  .forEach((items) =>
+  product.appendChild(createProductItemElement(items))));
+};
+
+window.onload = () => { 
+  products();
+};
