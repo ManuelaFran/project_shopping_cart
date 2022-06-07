@@ -54,10 +54,10 @@ const createItems = (items) => {
   .then((element) => createCartItems.appendChild(createCartItemElement(element)));
 };
 
-document.addEventListener('click', async (event) => {
+document.addEventListener('click', (event) => {
   if (event.target.classList.contains('item__add')) {
     const element = event.target.parentNode.firstChild.innerText;
-    await createItems(element);
+    createItems(element);
   }
 });
 
