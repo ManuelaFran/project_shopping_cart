@@ -1,3 +1,9 @@
+const emptyCart = document.querySelector('.empty-cart');
+const cleanCart = () => {
+  ol.innerHTML = '';
+};
+emptyCart.addEventListener('click', cleanCart);
+
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
   img.className = 'item__image';
