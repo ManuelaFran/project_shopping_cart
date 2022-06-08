@@ -1,6 +1,7 @@
+const list = document.querySelector('.cart__items');
 const emptyCart = document.querySelector('.empty-cart');
 const cleanCart = () => {
-  ol.innerHTML = '';
+  list.innerHTML = '';
 };
 emptyCart.addEventListener('click', cleanCart);
 
